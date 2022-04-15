@@ -1,5 +1,4 @@
 import json
-from re import I
 import pyparsing as pp
 import numbers
 import time

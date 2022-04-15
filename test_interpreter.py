@@ -1,5 +1,5 @@
 from re import I
-import interpreter as fb # <-- funzo bunzo
+import interpreter as fbi # <-- funzo bunzo interpreter
 
 def test_execute():
     inpt = """
@@ -13,7 +13,7 @@ def test_execute():
     }
     """
 
-    actual = fb.execute(inpt, {})
+    actual = fbi.execute(inpt, {})
     expected = "hello world!"
     assert actual == expected
 
@@ -47,7 +47,7 @@ def test_execute():
         }
     }
     """
-    actual = fb.execute(inpt_steps, {"name": "BunzFunz"})
+    actual = fbi.execute(inpt_steps, {"name": "BunzFunz"})
     expected = "BunzFunz is a long name"
     assert actual == expected
 

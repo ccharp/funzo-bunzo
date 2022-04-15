@@ -1,6 +1,4 @@
 from flask import Flask, request, jsonify, render_template
-import json
-import sys
 import interpreter as fbi #FunzoBunzo Interpreter
 import logging
 
