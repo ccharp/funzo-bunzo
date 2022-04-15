@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Bunzo Funzo Time!</title>
+</head>
+
+<script type="text/javascript">
+    function eval_json() {
+        var request_json = {
+            "entry_point": "hello_world",
+            "tasks": {
+                "hello_world": {
+                    "output": "hello world!"
+                }
+            }
+        };
+    
+        var url = window.location.href;
+        fetch(url + "api/compute", {
+            method: 'POST',
+            headers: {
+                'Accept': 'application/json',
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify(request_json),
+        }).then(response => response.json()).then(data => {
+            console.log(data)
+            var output_field = document.getElementById("output_p");
+            output_p.innerText = data["result"];
+        });
+    }
+</script>
+
+<body>
+  <h1 style="color: blue">Ready?!</h1>
+  <p>IT IS TIME FOR FUNZO BUNZO's DECLARATIVE MADNESS!</p>
+  <p>Press the button. Or don't. Bunzo will be Funzo either way.</p>
+  <button id="hello_button" onclick="eval_json()">Press me?</button>
+  <p id="output_p"></p>
+</body>
+
+</html>
