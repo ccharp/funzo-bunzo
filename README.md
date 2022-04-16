@@ -30,7 +30,9 @@ The backend is prioritized. If time allows, I will construct a rudimentary front
         * Return result of execution or error
         * Encode specific interpreter error in JSON 
 3. Front-end
-   1. TODO
+   1. Rudimentary end-to-end example
+   2. Guts of specification
+   3. Prettify
 4. Brainstorming new features
-   * 
+   * TODO 
    * Implementation order
