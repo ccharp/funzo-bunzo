@@ -1,5 +1,6 @@
 from re import I
 import interpreter as fbi # <-- funzo bunzo interpreter
+import json
 
 def test_execute():
     inpt = """
@@ -13,7 +14,7 @@ def test_execute():
     }
     """
 
-    actual = fbi.execute(inpt, {})
+    actual = fbi.execute(json.loads(inpt), {})
     expected = "hello world!"
     assert actual == expected
 
@@ -47,7 +48,7 @@ def test_execute():
         }
     }
     """
-    actual = fbi.execute(inpt_steps, {"name": "BunzFunz"})
+    actual = fbi.execute(json.loads(inpt_steps), {"name": "BunzFunz"})
     expected = "BunzFunz is a long name"
     assert actual == expected
 

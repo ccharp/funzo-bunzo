@@ -33,6 +33,8 @@ def eval_task(env: _Env, task_name): # TODO: annotate type of tasks (dictionary)
 def eval_statement(env, statement):
     words = parse_statement(statement)
 
+    pp(words)
+
     accum_str = ""
     for word in words: 
         accum_str += eval_word(env, word)
